@@ -1,0 +1,9 @@
+{
+  "name": "practical-ai-tip",
+  "description": "Shares the best one to three practical, sourced tips for working with AI assistants and agents, matched to the current situation.",
+  "author": {
+    "name": "gloriamu0001"
+  },
+  "homepage": "https://github.com/gloriamu0001/practical-ai-tip",
+  "license": "CC-BY-4.0"
+}

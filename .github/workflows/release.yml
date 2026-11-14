@@ -1,0 +1,30 @@
+name: Release zip for Claude Cowork
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zip the skill folder
+        run: |
+          cd plugins/practical-ai-tip/skills
+          zip -r "$GITHUB_WORKSPACE/practical-ai-tip.zip" practical-ai-tip
+      - name: Update the "latest" release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          NOTES="Skill folder as a zip, for upload in Claude Cowork. Updated $(date -u +%F)."
+          if gh release view latest >/dev/null 2>&1; then
+            gh release upload latest practical-ai-tip.zip --clobber
+            gh release edit latest --notes "$NOTES"
+          else
+            gh release create latest practical-ai-tip.zip --title "practical-ai-tip (latest)" --notes "$NOTES" --latest
+          fi
