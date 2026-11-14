@@ -2,7 +2,7 @@
 
 An agent skill that shares practical tips for working with AI assistants and agents. It runs in Claude Code, Codex, Gemini CLI, GitHub Copilot, Cursor and Windsurf.
 
-Call the skill, with or without a question. It reads the current conversation, matches the situation against a curated bank of tips, and shares the best one to three. When only one tip fits, it shows the full tip: what to do, when to use it, the steps, any prompt or template to copy, and its limits. Each tip credits the people and documents it comes from.
+Call the skill, with or without a question. It reads the current conversation, matches the situation against a curated bank of 89 tips, and shares the best one to three. When only one tip fits, it shows the full tip: what to do, when to use it, the steps, any prompt or template to copy, and its limits. Each tip credits the people and documents it comes from.
 
 ## What it helps with
 
@@ -13,6 +13,18 @@ Call the skill, with or without a question. It reads the current conversation, m
 - Which practice fits the work at hand
 
 It does not cover AI news, model comparisons or building AI products. Some tips use features of Claude Code; the skill shares those only in Claude Code.
+
+## How the tips are made
+
+Every tip is hand-curated and checked against a written standard.
+
+- **Qualified sources only.** Tips come from the makers of AI tools, the people who build them, recognised practitioners and expert bodies. Anonymous posts, engagement bait and AI-written summaries are rejected.
+- **Six quality bars.** A tip must come from a reputable source, be confirmed by at least one other author, apply beyond a single field, be about working with AI, give steps a newcomer can follow, and hold for current tools. A tip that fails one bar is dropped.
+- **Disagreements shown, not hidden.** Newer advice replaces older advice from the same source, and official documentation decides questions about a tool's own features. When reputable sources disagree on practice, the tip follows the mainstream practice and marks the other view in a "Sources disagree" note that links to both.
+- **One clear format.** One idea per tip, plain language, a source for every factual claim, no hype, and short limits that say where the tip stops working.
+- **Tested.** 33 test conversations check that the skill picks the right tip, and that it shares nothing when no tip fits. In the latest run, the first tip shared was correct in 96% of cases, and every no-tip case got no tip.
+- **Kept current.** The sources are reviewed every month. Each change is reviewed by the maintainer before it is released.
+- **Light at run time.** The skill reads only its own files. It writes nothing, fetches nothing from the network, and keeps no record of the tips it has shown.
 
 ## Install
 
@@ -59,7 +71,7 @@ Add a struggle, the kind of tip wanted, a tip number, or `all` to browse every t
 
 ## About the tips
 
-The maintainer selects, writes and updates the tips. This repository holds only the finished skill; it does not accept contributions to the tip bank.
+The maintainer selects, writes and updates the tips.
 
 ## License
 
