@@ -1,6 +1,6 @@
 # practical-ai-tip
 
-An agent skill that shares practical tips for working with AI assistants and agents. It runs in Claude Code and Claude Cowork.
+An agent skill that shares practical tips for working with AI assistants and agents. It runs in Claude Code, Codex, Gemini CLI, GitHub Copilot, Cursor and Windsurf.
 
 Call the skill, with or without a question. It reads the current conversation, matches the situation against a curated bank of tips, and shares the best one to three. When only one tip fits, it shows the full tip: what to do, when to use it, the steps, any prompt or template to copy, and its limits. Each tip credits the people and documents it comes from.
 
@@ -12,11 +12,19 @@ Call the skill, with or without a question. It reads the current conversation, m
 - How to brief an agent, check its work, automate a task, or connect tools safely
 - Which practice fits the work at hand
 
-It does not cover AI news, model comparisons or building AI products.
+It does not cover AI news, model comparisons or building AI products. Some tips use features of Claude Code; the skill shares those only in Claude Code.
 
 ## Install
 
-### Claude Code: plugin (gets updates)
+### Any of the six tools, with one command
+
+```
+npx skills add gloriamu0001/practical-ai-tip -g
+```
+
+Choose the tools when asked, or name them: `-a claude-code codex gemini-cli github-copilot cursor windsurf`. Run `npx skills update` to get new tips.
+
+### Claude Code as a plugin (gets updates)
 
 In a Claude Code session:
 
@@ -25,24 +33,29 @@ In a Claude Code session:
 /plugin install practical-ai-tip@practical-ai-tip
 ```
 
-Without a GitHub SSH key, set `CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1` in the shell before starting Claude Code.
+Without a GitHub SSH key, set `CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1` in the shell before starting Claude Code. To receive new tips automatically, open `/plugin`, go to **Marketplaces**, select `practical-ai-tip` and select **Enable auto-update**.
 
-To receive new tips automatically, open `/plugin`, go to **Marketplaces**, select `practical-ai-tip` and select **Enable auto-update**. Otherwise run `/plugin marketplace update practical-ai-tip` from time to time.
+### By hand
 
-### Claude Code: copy the folder
+Copy the folder `skills/practical-ai-tip/` into the skills folder of the tool:
 
-Copy `plugins/practical-ai-tip/skills/practical-ai-tip/` into `~/.claude/skills/`. Copy it again to get new tips.
+| Tool | Folder |
+|---|---|
+| Claude Code | `~/.claude/skills/` |
+| Codex, Gemini CLI, GitHub Copilot, Cursor, Windsurf | `~/.agents/skills/` |
 
-### Claude Cowork
-
-Download [practical-ai-tip.zip](https://github.com/gloriamu0001/practical-ai-tip/releases/latest/download/practical-ai-tip.zip) and upload it in the Claude app's skill settings. Download and upload again to get new tips.
+Copy it again to get new tips.
 
 ## Use
 
-- **Plugin install:** `/practical-ai-tip:practical-ai-tip`
-- **Copied folder:** `/practical-ai-tip`
+| Tool | Call the skill |
+|---|---|
+| Claude Code | `/practical-ai-tip` (as a plugin: `/practical-ai-tip:practical-ai-tip`) |
+| Codex | `$practical-ai-tip` |
+| Cursor, Windsurf | `/practical-ai-tip` |
+| Gemini CLI, GitHub Copilot | ask for a tip; the tool starts the skill |
 
-Add a struggle, the kind of tip wanted, a tip number, or `all` to browse every tip by topic. Asking for a tip on working better with AI also starts the skill.
+Add a struggle, the kind of tip wanted, a tip number, or `all` to browse every tip by topic. In every tool, asking for a tip on working better with AI also starts the skill.
 
 ## About the tips
 

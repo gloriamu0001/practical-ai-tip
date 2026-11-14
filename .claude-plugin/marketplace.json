@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "practical-ai-tip",
-      "source": "./plugins/practical-ai-tip",
+      "source": "./",
       "description": "Shares the best one to three practical tips for working with AI, matched to the current situation."
     }
   ]

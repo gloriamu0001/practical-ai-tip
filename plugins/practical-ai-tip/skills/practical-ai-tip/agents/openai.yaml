@@ -1,4 +1,0 @@
-interface:
-  display_name: "/practical-ai-tip"
-  short_description: "Practical tips for working with AI, matched to the current situation."
-  default_prompt: "/practical-ai-tip Which tip fits what I am doing right now?"
